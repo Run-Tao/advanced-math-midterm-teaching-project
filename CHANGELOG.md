@@ -29,7 +29,9 @@
 - 初始化为独立 git 仓库，`main` 分支，首次提交 `91c25e1`（36 文件 / +8755 行）。
 - 新增 `.gitignore`：排除 LaTeX 中间产物、`04_资源/Source/` 临时 PDF、Python 缓存、系统文件与填写后的真实评估记录 `评估记录_*.csv`；空白模板 `评估记录模板.csv` 仍纳入。
 - `README.md` 补 §6「版本控制」，说明分支、忽略规则、复现与远端状态。
-- 当前未配置 remote、未 push。
+- 2026-11-09 新建**公开** GitHub 仓库 `Run-Tao/advanced-math-midterm-teaching-project`，关联为 `origin` 并推送 `main`（截至 `497c321`，36 文件）。用 GitHub API 复核：Public、默认分支 `main`、文件数 36、目录结构完整，远端与本地 `HEAD` 一致。
+- 推送踩坑：本机代理端口漂移；`53486` 对 `api.github.com` 可用但对 `github.com` 返回 `CONNECT tunnel failed 502`（首次 push 报 `curl 55`）。并发扫描本地端口后改用 `7890`，配合 `-c http.version=HTTP/1.1 -c http.postBuffer=524288000` 推送成功。全程用单次 `-c`，未改全局 git 配置。
+- `README.md` §6 已同步远端链接、可见性与代理说明。
 
 ### 维护提示
 

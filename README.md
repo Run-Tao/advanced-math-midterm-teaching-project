@@ -106,11 +106,14 @@ PYTHONIOENCODING=utf-8 python align_share_bookmarks.py
 - 首次提交 `91c25e1`：「init: 高数 I 期中教学项目 v1.0」，36 个文件 / +8755 行。
 - `.gitignore` 排除 LaTeX 中间产物（`*.aux` / `*.log` / `*.out` / `*.toc` 等）、`04_资源/Source/` 下编译出的临时 PDF、Python 缓存、系统文件，以及**填写后的真实评估记录** `评估记录_*.csv`（避免误提交学生数据）。`03_总结与评估/评估记录模板.csv` 是空白模板，**已纳入版本控制**。
 - 成品 PDF、讲义成品 `.tex`、题库四册与全部脚本均纳入，克隆后即可按 §4 独立复现。
+- 远端：**<https://github.com/Run-Tao/advanced-math-midterm-teaching-project>**（**Public**，`origin`，`main` 跟踪 `origin/main`）。2026-11-09 推送，远端与本地一致；直接把链接发给他人即可查看。
 
 ```bash
 cd 高数I期中教学项目
 git status
 git add -A && git commit -m "docs: 说明改动"
+git push
 ```
 
-> 待补充：远端仓库地址未提供，当前**未配置 remote**，未做 push。需要推送到 GitHub 或其它平台时再添加，不自动创建远端。
+> 推送环境说明：本机访问 GitHub 需走 HTTP 代理且端口会漂移。推送时用单次 `git -c http.proxy=http://127.0.0.1:<端口> -c https.proxy=... push`，**不改全局 git 配置**；若报 `CONNECT tunnel failed 502`，换其它本地代理端口重试（实测 `7890` 可用，`api.github.com` 与 `github.com` 的放行情况可能不同）。
+> 公开仓库会显示编者署名与 git 提交邮箱；如需改为私有或改名，在 GitHub 仓库设置里操作并同步更新本文件的链接。
